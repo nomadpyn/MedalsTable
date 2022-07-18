@@ -27,5 +27,10 @@ public:
 		}
 		return *this;
 	}
+// объявление методов и фукнции класса
+	const char* getCountry()const;
+	int& operator[](int idx);
+	int operator[](int idx)const;
+	void print()const;
 };
 
