@@ -20,17 +20,11 @@ public:
 	}
 // конструктор по умолчанию
 	MedalRow() : MedalRow(nullptr, nullptr) {}
-// конструктор копирования
-	MedalRow& setCountry(const char* countryP){
-		if (countryP){
-			strcpy_s(country, 4, countryP);
-		}
-		return *this;
-	}
 // объявление методов и фукнции класса
 	const char* getCountry()const;
 	int& operator[](int idx);
 	int operator[](int idx)const;
 	void print()const;
+	MedalRow& setCountry(const char* countryP);
 };
 
