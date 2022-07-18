@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+*.lock
+*.vsidx
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.sln
+*.vcxproj
+*.filters
+*.user
+.vs/MedalTable/v17/.suo
+*.ipch
