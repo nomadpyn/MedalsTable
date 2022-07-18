@@ -42,3 +42,10 @@
 *.user
 .vs/MedalTable/v17/.suo
 *.ipch
+*.log
+*.tlog
+*.idb
+*.txt
+*.pdb
+*.recipe
+*.ilk
