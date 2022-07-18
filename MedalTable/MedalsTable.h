@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include"MedalRow.h"
+using namespace std;
 // класс MedalsTable
 class MedalsTable
 {
@@ -19,5 +20,6 @@ public:
 // описание методов и функции класса
 	void print()const;
 	MedalRow& operator[](const char* country);
+	friend ostream& operator << (ostream& out, const MedalsTable& obj);
 };
 

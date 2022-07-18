@@ -14,6 +14,6 @@ int main() {
 	mt1["POL"][MedalRow::SILVER] = 2;
 	mt1["RUS"][MedalRow::GOLD] = 4;
 	mt1["RUS"][MedalRow::SILVER] = 2;
-	mt1.print();
+	cout << mt1;
 	return 0;
 }

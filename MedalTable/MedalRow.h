@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include<iostream>
+using namespace std;
 // класс MedalRow
 class MedalRow
 {
@@ -26,5 +27,6 @@ public:
 	int operator[](int idx)const;
 	void print()const;
 	MedalRow& setCountry(const char* countryP);
+	friend ostream& operator << (ostream& out, const MedalRow& obj);
 };
 

@@ -36,3 +36,15 @@ MedalRow& MedalRow::setCountry(const char* countryP){
 	}
 	return *this;
 }
+
+ostream& operator<<(ostream& out, const MedalRow& obj)
+{
+	cout << '[' << obj.country << "]-( ";
+	for (int i{ 0 }; i < 3; ++i)
+	{
+		cout << obj.medals[i];
+		if (i < 2) { cout << '\t'; }
+	}
+	cout << " )\n";
+	return out;
+}

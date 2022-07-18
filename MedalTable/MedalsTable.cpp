@@ -39,3 +39,9 @@ MedalRow& MedalsTable::operator[] (const char* country) {
 	}
 	return medalRows[idx];
 }
+ostream& operator << (ostream& out, const MedalsTable& obj) {
+	for (int i{ 0 }; i < obj.size; i++) {
+		cout << obj.medalRows[i];
+	}
+	return out;
+}
