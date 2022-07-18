@@ -8,17 +8,16 @@ private:
 	MedalRow * medalRows;
 	int findCountry(const char* country) const;
 public:
-// конструктор с параметрами
-	MedalsTable(int szP) : size{ szP } {
-		if (szP == 0)
-			this->medalRows = nullptr;
-		else
-			this->medalRows = new MedalRow[szP];
-	}
 // конструктор по умолчанию
-	MedalsTable() : MedalsTable(0) {};
+	MedalsTable() : size{ 0 } {
+		this->medalRows = nullptr;
+	};
+// деструктор
 	~MedalsTable() {
-		delete[]this->medalRows
+		delete[]this->medalRows;
 	}
+// описание методов и функции класса
+	void print()const;
+	MedalRow& operator[](const char* country);
 };
 
