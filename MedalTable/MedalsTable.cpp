@@ -66,3 +66,10 @@ MedalsTable& MedalsTable::operator=(const MedalsTable& other){
 		this->medalRows[i] = other.medalRows[i];
 	return *this;
 }
+// конструктор перемещения
+MedalsTable::MedalsTable(MedalsTable&& other) {
+	this->size = other.size;
+	this->medalRows = other.medalRows;
+	other.medalRows = nullptr;
+	other.size = 0;
+}

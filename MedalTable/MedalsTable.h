@@ -15,6 +15,8 @@ public:
 	};
 // конструктор копирования
 	MedalsTable(const MedalsTable& other);
+// конструктор перемещения
+	MedalsTable(MedalsTable&& other);
 // деструктор
 	~MedalsTable() {
 		delete[]this->medalRows;
