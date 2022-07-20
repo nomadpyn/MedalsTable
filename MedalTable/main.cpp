@@ -15,7 +15,8 @@ int main() {
 	mt1["RUS"][MedalRow::GOLD] = 4;
 	mt1["RUS"][MedalRow::SILVER] = 2;
 	cout << mt1;
-	MedalsTable mt2{ mt1 };
+	MedalsTable mt2;
+	mt2 = mt1;
 	cout << "-------------------\n";
 	cout << mt2;
 	return 0;

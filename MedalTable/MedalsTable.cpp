@@ -55,3 +55,14 @@ MedalsTable::MedalsTable(const MedalsTable& other) {
 	for (int i = 0; i < this->size; i++)
 		this->medalRows[i] = other.medalRows[i];
 }
+// перегрузка оператора = для копирования
+MedalsTable& MedalsTable::operator=(const MedalsTable& other){
+	if (this == &other)
+		return *this;
+	delete this->medalRows;
+	this->size = other.size;
+	this->medalRows = new MedalRow[this->size];
+	for (int i = 0; i < this->size; i++)
+		this->medalRows[i] = other.medalRows[i];
+	return *this;
+}
