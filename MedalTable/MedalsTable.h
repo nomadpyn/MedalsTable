@@ -13,6 +13,8 @@ public:
 	MedalsTable() : size{ 0 } {
 		this->medalRows = nullptr;
 	};
+// конструктор копирования
+	MedalsTable(const MedalsTable& other);
 // деструктор
 	~MedalsTable() {
 		delete[]this->medalRows;

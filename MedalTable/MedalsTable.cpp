@@ -39,9 +39,19 @@ MedalRow& MedalsTable::operator[] (const char* country) {
 	}
 	return medalRows[idx];
 }
+// перегрузка оператора вывода данных в консоль
 ostream& operator << (ostream& out, const MedalsTable& obj) {
 	for (int i{ 0 }; i < obj.size; i++) {
 		cout << obj.medalRows[i];
 	}
 	return out;
+}
+// конструктор копирования
+MedalsTable::MedalsTable(const MedalsTable& other) {
+	if (this->medalRows != nullptr)
+		delete this->medalRows;
+	this->size = other.size;
+	this->medalRows = new MedalRow[this->size];
+	for (int i = 0; i < this->size; i++)
+		this->medalRows[i] = other.medalRows[i];
 }
