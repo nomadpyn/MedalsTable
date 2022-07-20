@@ -73,3 +73,14 @@ MedalsTable::MedalsTable(MedalsTable&& other) {
 	other.medalRows = nullptr;
 	other.size = 0;
 }
+// перегрузка оператора = для перемещения
+MedalsTable& MedalsTable::operator = (MedalsTable&& other) {
+	if (!(this == &other)) {
+		delete this->medalRows;
+		medalRows = other.medalRows;
+		size = other.size;
+		other.medalRows = nullptr;
+		other.size = 0;
+	}
+	return *this;
+}
