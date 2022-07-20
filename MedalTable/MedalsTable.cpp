@@ -84,3 +84,17 @@ MedalsTable& MedalsTable::operator = (MedalsTable&& other) {
 	}
 	return *this;
 }
+const int MedalsTable::operator() (const char* country) {
+	int idx{ findCountry(country) };
+	if (idx == -1)
+		return -1;
+	if (this->medalRows[idx][MedalRow::GOLD] > this->medalRows[idx][MedalRow::SILVER]
+		&& this->medalRows[idx][MedalRow::GOLD] > this->medalRows[idx][MedalRow::BRONZE])
+		return MedalRow::GOLD;
+	if (this->medalRows[idx][MedalRow::SILVER] > this->medalRows[idx][MedalRow::GOLD]
+		&& this->medalRows[idx][MedalRow::SILVER] > this->medalRows[idx][MedalRow::BRONZE])
+		return MedalRow::SILVER;
+	if (this->medalRows[idx][MedalRow::BRONZE] > this->medalRows[idx][MedalRow::SILVER]
+		&& this->medalRows[idx][MedalRow::BRONZE] > this->medalRows[idx][MedalRow::GOLD])
+		return MedalRow::BRONZE;
+}
