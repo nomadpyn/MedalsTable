@@ -36,7 +36,7 @@ MedalRow& MedalRow::setCountry(const char* countryP){
 	}
 	return *this;
 }
-
+// перегрузка оператора вывода данных об объекте в консоль
 ostream& operator<<(ostream& out, const MedalRow& obj)
 {
 	cout << '[' << obj.country << "]-( ";
